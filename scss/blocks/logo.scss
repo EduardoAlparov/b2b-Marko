@@ -1,0 +1,13 @@
+@import '../helpers/mixins.scss';
+
+.logo {
+    display: block;
+    flex-shrink: 0;
+    width: 12rem;
+    height: 3.65rem;
+
+    @include breakpointMF(tablet) {
+        width: 17.8rem;
+        height: 5.4rem;
+    }
+}

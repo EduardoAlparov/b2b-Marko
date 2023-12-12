@@ -1,8 +1,11 @@
 import Modal from "./modules/Modal.js";
-import Map from "./modules/Map.js";
-import validationForm from './modules/validation.js';
-import inputMasks from './modules/masks.js';
-import lazyload from './modules/lazyload.js';
+// import validationForm from './modules/validation.js';
+// import inputMasks from './modules/masks.js';
+// import lazyload from './modules/lazyload.js';
+
+import setHeaderPadding from './modules/setHeaderPadding.js';
+import dropdownsControl from './modules/dropdownsControl.js';
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const body = document.body;
@@ -22,29 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
         },
     });
 
-    // inits map: 
-    if(!document.getElementById('yamapsId')) {
-        return;
-    } else {
-        const map = new Map('yamapsId', {
-            // map center:
-            center: [55.77, 49.15],
-            // map zoom value:
-            zoom: 14,
-            // placemarks:
-            coords: [
-                [55.767398, 49.150961]
-            ],
-            // map control elements:
-            controls: [
-    
-            ]
-        })
-    }
-
-    validationForm();
-    inputMasks();
+    // validationForm();
+    // inputMasks();
 
     // lazyload for images, videos, iframes and objects:
-    lazyload();
+    // lazyload();
+
+    setHeaderPadding();
+    dropdownsControl();
 })

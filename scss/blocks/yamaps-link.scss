@@ -1,0 +1,24 @@
+.yamaps-link {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    flex-shrink: 0;
+
+    span {
+        flex-shrink: 0;
+        display: block;
+        width: 5.7rem;
+        aspect-ratio: 1;
+
+        background-image: url('../../images/ya-pin.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+    }
+
+    .icon {
+        flex-shrink: 0;
+        width: 12rem;
+        height: 5.84rem;
+    }
+}

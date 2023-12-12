@@ -1,92 +1,376 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-
-	<meta charset="utf-8">
-	<!-- <base href="/"> -->
-
-	<title>Simple Starter 2.0</title>
-	<meta name="description" content="Simple Starter 2.0 Description ">
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-	<link rel="icon" href="images/favicon.png">
-	<meta property="og:image" content="images/preview.jpg">
-
-	<link rel="stylesheet" href="./styles.css">
-
-	<script src="js/main.js" type="module" defer></script>
-
-</head>
-
-<body class="preload">
-
-	<div class="wrapper">
-    <header class="header">
-			<div class="header__site-container">
-				<a href="/" class="logo">
-					HDR-LOGO
-				</a>
-
-				<button data-path="modal" class="button">
-					show modal
-				</button>
-			</div>
-		</header>
-
-		<main class="main">
-			<section class="section">
-				<div class="section__site-container">
-					<h1 class="visually-hidden">
-						Section title
-					</h1>
-
-					<h1>
-						HTML/CSS template for VS-code
-					</h1>
-
-				</div>
-			</section>
-
-			<section class="section">
-				<div class="section__site-container">
-					<form action="" class="form">
-						<input type="text" name="phone" id="" class="input" placeholder="Введите номер телефона">
-					</form>
-				</div>
-			</section>
-
-			<section class="section map">
-				<div class="map__box" id="yamapsId">
-					<!-- inject map -->
-				</div>
-			</section>
-
-			<section class="section lazyloading">
-				<div class="section__site-container">
-					
-				</div>
-			</section>
-		</main>
-
-		<footer class="footer">
-			<div class="footer__site-container">
-				footer
-			</div>
-		</footer>
-	</div>
-
-	<div class="modal">
-		<div class="modal__container" data-target="modal">
-			<div class="modal__content">
-				<button type="button" class="modal__close-btn modal-close">
-					<svg class="icon">
-						<use xlink:href="./images/sprite.svg#close"></use>
-					</svg>
-				</button>
-			</div>
-		</div>
-	</div>
-</body>
-</html>
+    <head>
+        <meta charset="utf-8">
+        <title>Marko</title>
+        <meta name="description" content="Simple Starter 2.0 Description ">
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="icon" href="images/favicon.png">
+        <meta property="og:image" content="images/preview.jpg">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="./styles.css">
+        <script src="js/main.js" type="module" defer></script>
+    </head>
+    <body class="preload">
+        <div class="wrapper">
+            <header class="header">
+                <div class="header__site-container">
+                    <div class="header__logo-box">
+                        <a href="/" class="logo">
+                            <svg class="icon">
+                                <use xlink:href="./images/sprite.svg#logo"></use>
+                            </svg>
+                        </a>
+                        <a href="https://yandex.ru/maps/-/CDqVEXpj" class="yamaps-link" target="_blank">
+                            <span></span>
+                            <svg class="icon">
+                                <use xlink:href="./images/sprite.svg#ya-link"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="header__contacts-box hide-on-tablet">
+                        <p class="header__address address">
+                            <strong>
+                                Производство кухонь на заказ
+                            </strong>
+                            <span>
+                                Анапа, ул. Крылова, д. 27
+                            </span>
+                        </p>
+                        <div class="header__controls">
+                            <ul class="header__socials socials">
+                                <li>
+                                    <a aria-label="whatsapp link" href="#" class="socials__link socials__link--whatsapp"></a>
+                                </li>
+                                <li>
+                                    <a aria-label="whatsapp link" href="#" class="socials__link socials__link--telegram"></a>
+                                </li>
+                            </ul>
+                            <a href="tel:+7 (988)-311-77-88" class="header__phone-link link">
+                                +7 (988)-311-77-88
+                            </a>
+                            <button data-path="modal" class="button button--outline button--white button--small" type="button">
+                                Заказать звонок
+                            </button>
+                        </div>
+                    </div>
+                    <button class="header__hamburger hamburger show-on-tablet" type="button">
+                        hamburger
+                    </button>
+                </div>
+            </header>
+            <main class="main">
+                <section class="section hero _intro-padding-top">
+                    <div class="hero__site-container">
+                        <h1 class="visually-hidden">
+                            Section seo title
+                        </h1>
+                        <div class="hero__info">
+                            <div class="hero__heading">
+                                <h2 class="_text-h1">Изготовим роскошную<br> дизайнерскую кухню</h2>
+                                <div class="hero__advantage advantage advantage--bigger">
+                                    <span class="advantage__image">
+                                        <svg class="icon">
+                                            <use xlink:href="./images/sprite.svg#wallet"></use>
+                                        </svg>
+                                    </span>
+                                    <p class="advantage__desc address">
+                                        <strong>Цена на 12-24% ниже,</strong>
+                                        <span>чем у посредников</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="hero__button-headered button-headered">
+                                <span class="button-headered__head">Рассчитаем стоимость кухни-мечты</span>
+                                <button class="button button--outline button--white" type="button">
+                                    Заказать расчёт
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero__back">
+                        <div class="hero__picture">
+                            <picture>
+                                <source type="image/webp" srcset="./images/hero-back.jpg" alt="hero image">
+                                <img src="./images/hero-back.jpg" alt="hero image">
+                            </picture>
+                            <div class="hero__hints">
+                                <div class="hero__hint hero__hint--top">
+                                    <div class="hint">
+                                        <span>Огромный выбор<br> бытовой техники</span>
+                                    </div>
+                                </div>
+                                <div class="hero__hint hero__hint--middle">
+                                    <div class="hint">
+                                        <span>Изысканный гарнитур<br> любого размера</span>
+                                    </div>
+                                </div>
+                                <div class="hero__hint hero__hint--bottom">
+                                    <div class="hint">
+                                        <span>Выдающиеся<br> сорта древесины</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section advantages">
+                    <div class="advantages__main">
+                        <div class="advantages__site-container">
+                            <div class="advantages__body">
+                                <div class="advantages__picture"></div>
+                                <div class="advantages__list-wrapper">
+                                    <h2 class="advantages__heading section__heading section__heading--right-line">
+                                        <span>Наши преимущества</span>
+                                    </h2>
+                                    <ul class="advantages__list">
+                                        <li class="advantages__item advantage">
+                                            <span class="advantage__image">
+                                                <svg class="icon">
+                                                    <use xlink:href="./images/sprite.svg#adv-1"></use>
+                                                </svg>
+                                            </span>
+                                            <p class="advantage__desc address">
+                                                <strong>C 2000 г на рынке</strong>
+                                                <span>наши кухни выбрали 10&nbsp;000+ семей</span>
+                                            </p>
+                                        </li>
+                                        <li class="advantages__item advantage">
+                                            <span class="advantage__image">
+                                                <svg class="icon">
+                                                    <use xlink:href="./images/sprite.svg#adv-2"></use>
+                                                </svg>
+                                            </span>
+                                            <p class="advantage__desc address">
+                                                <strong>Сжатые сроки</strong>
+                                                <span>изготовление кухни от&nbsp;20&nbsp;дней</span>
+                                            </p>
+                                        </li>
+                                        <li class="advantages__item advantage">
+                                            <span class="advantage__image">
+                                                <svg class="icon">
+                                                    <use xlink:href="./images/sprite.svg#adv-3"></use>
+                                                </svg>
+                                            </span>
+                                            <p class="advantage__desc address">
+                                                <strong>Дизайн проект</strong>
+                                                <span>бесплатно за 30 минут</span>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="advantages__decore">
+                        <div class="advantages__site-container">
+                            <div class="advantages__body">
+                                <div class="advantages__picture">
+                                    <picture>
+                                        <source type="image/webp" srcset="./images/advantages-image.png" alt="advantages image">
+                                        <img src="./images/advantages-image.png" alt="advantages image">
+                                    </picture>
+                                </div>
+                                <div class="advantages__list-wrapper"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section section--mt works">
+                    <div class="works__navigation-wrapper">
+                        <div class="works__site-container">
+                            <div class="works__heading section__heading section__heading--left-line">
+                                <span>Посмотрите наши работы</span>
+                            </div>
+                            <form action="#" class="works__navigation">
+                                <ul class="works__dropdowns">
+                                    <li class="works__dropdown">
+                                        <div class="dropdown">
+                                            <button type="button" class="dropdown__button">
+                                                <span>ПЛАНИРОВКА</span>
+                                                <i>
+                                                    <svg class="icon">
+                                                        <use xlink:href="./images/sprite.svg#drop"></use>
+                                                    </svg>
+                                                </i>
+                                            </button>
+                                            <div class="dropdown__list-wrapper">
+                                                <ul class="dropdown__list">
+                                                    <li class="dropdown__item">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" class="checkbox__input visually-hidden" id="checkbox-one" value="100" hidden>
+                                                            <i class="checkbox__custom-input"></i>
+                                                            <span class="checkbox__text" data-counter="100">Прямые</span>
+                                                        </label>
+                                                    </li>
+                                                    <li class="dropdown__item">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" class="checkbox__input visually-hidden" id="checkbox-two" value="200" hidden>
+                                                            <i class="checkbox__custom-input"></i>
+                                                            <span class="checkbox__text" data-counter="200">Угловые</span>
+                                                        </label>
+                                                    </li>
+                                                    <li class="dropdown__item">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" class="checkbox__input visually-hidden" id="checkbox-three" value="225" hidden>
+                                                            <i class="checkbox__custom-input"></i>
+                                                            <span class="checkbox__text" data-counter="200">С островом</span>
+                                                        </label>
+                                                    </li>
+                                                    <li class="dropdown__item">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" class="checkbox__input visually-hidden" id="checkbox-four" value="120" hidden>
+                                                            <i class="checkbox__custom-input"></i>
+                                                            <span class="checkbox__text" data-counter="200">Трёхъярусные</span>
+                                                        </label>
+                                                    </li>
+                                                    <li class="dropdown__item">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" class="checkbox__input visually-hidden" id="checkbox-five" value="170" hidden>
+                                                            <i class="checkbox__custom-input"></i>
+                                                            <span class="checkbox__text" data-counter="200">П-образные</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="works__dropdown">
+                                        <div class="dropdown">
+                                            <button type="button" class="dropdown__button">
+                                                <span>CТИЛЬ КУХНИ</span>
+                                                <i>
+                                                    <svg class="icon">
+                                                        <use xlink:href="./images/sprite.svg#drop"></use>
+                                                    </svg>
+                                                </i>
+                                            </button>
+                                            <div class="dropdown__list-wrapper">
+                                                <ul class="dropdown__list">
+                                                    <li class="dropdown__item">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" class="checkbox__input visually-hidden" id="checkbox-style-1" value="checkbox-style-1" hidden>
+                                                            <i class="checkbox__custom-input"></i>
+                                                            <span class="checkbox__text">Cтиль 1</span>
+                                                        </label>
+                                                    </li>
+                                                    <li class="dropdown__item">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" class="checkbox__input visually-hidden" id="checkbox-style-2" value="checkbox-style-2" hidden>
+                                                            <i class="checkbox__custom-input"></i>
+                                                            <span class="checkbox__text">Cтиль 2</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="works__dropdown">
+                                        <div class="dropdown">
+                                            <button type="button" class="dropdown__button">
+                                                <span>ЦВЕТ</span>
+                                                <i>
+                                                    <svg class="icon">
+                                                        <use xlink:href="./images/sprite.svg#drop"></use>
+                                                    </svg>
+                                                </i>
+                                            </button>
+                                            <div class="dropdown__list-wrapper">
+                                                <ul class="dropdown__list">
+                                                    <li class="dropdown__item">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" class="checkbox__input visually-hidden" id="checkbox-color-1" value="checkbox-color-1" hidden>
+                                                            <i class="checkbox__custom-input"></i>
+                                                            <span class="checkbox__text">Цвет 1</span>
+                                                        </label>
+                                                    </li>
+                                                    <li class="dropdown__item">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" class="checkbox__input visually-hidden" id="checkbox-color-2" value="checkbox-color-2" hidden>
+                                                            <i class="checkbox__custom-input"></i>
+                                                            <span class="checkbox__text">Цвет 2</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="works__controls">
+                                    <button type="submit" class="button button--grey">
+                                        применить
+                                    </button>
+                                    <input class="button button--dark button--outline" type="reset" value="сбросить">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="works__list-wrapper">
+                        <div class="works__site-container">
+                            <ul class="works__list">
+                                <li class="works__item work-card">
+                                    <div class="work-card__body">
+                                        <div class="work-card__slider"></div>
+                                        <div class="work-card__info">
+                                            <div class="work-card__heading">
+                                                <span class="work-card__name">
+                                                    Кухня 097 минимализм
+                                                </span>
+                                                <p class="work-card__desc">
+                                                    Угловая белая кухня со столешницей под бетон.
+                                                </p>
+                                            </div>
+                                            <ul class="work-card__list">
+                                                <li class="work-card__item">
+                                                    <span class="work-card__key">Эконом</span>
+                                                    <span class="work-card__value">168 000 р.</span>
+                                                </li>
+                                                <li class="work-card__item">
+                                                    <span class="work-card__key">Стандарт</span>
+                                                    <span class="work-card__value">217 000 р.</span>
+                                                </li>
+                                                <li class="work-card__item">
+                                                    <span class="work-card__key">Премиум</span>
+                                                    <span class="work-card__value">270 000 р.</span>
+                                                </li>
+                                            </ul>
+                                            <span class="work-card__size">
+                                                <strong>Длина кухни:</strong>
+                                                4900 мм
+                                            </span>
+                                            <div class="work-card__buttons">
+                                                <a href="#" target="_blank" class="button button--full button--dark">
+                                                    Подробнее
+                                                </a>
+                                                <a href="#" target="_blank" class="button button--dark button--outline">
+                                                    Расчет стоимости
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <div class="modal">
+            <div class="modal__container" data-target="modal">
+                <div class="modal__content">
+                    <button type="button" class="modal__close-btn modal-close">
+                        <svg class="icon">
+                            <use xlink:href="./images/sprite.svg#close"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html></body></html></body></html>

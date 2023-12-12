@@ -1,0 +1,49 @@
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  white-space: nowrap;
+  border: 0;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+}
+
+._bold-text {
+  font-weight: 700;
+}
+
+._intro-padding-top {
+  padding-top: var(--header-height, 15%);
+}
+
+._text-h1 {
+  font: var(--font-sec-64);
+}
+
+@media only screen and (max-width: 640px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .hide-on-tablet {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 641px) {
+  .show-on-mobile {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .show-on-tablet {
+    display: none !important;
+  }
+}

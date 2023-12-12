@@ -1,0 +1,36 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  cursor: pointer;
+}
+
+.checkbox__custom-input {
+  flex-shrink: 0;
+  display: block;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 0.3rem;
+  border: 0.07rem solid var(--color-dark, #002b45);
+}
+
+.checkbox__text {
+  position: relative;
+  display: block;
+  color: var(--color-dark, #002b45);
+}
+
+.checkbox__text::after {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  font-size: 1rem;
+  content: attr(data-counter);
+}
+
+.checkbox__input:checked ~ .checkbox__custom-input {
+  background-image: url("data:image/svg+xml, %3Csvg%20fill%3D%22%23000000%22%20height%3D%22800px%22%20width%3D%22800px%22%20version%3D%221.1%22%20id%3D%22Capa_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20viewBox%3D%220%200%20490%20490%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cpolygon%20points%3D%22452.253%2C28.326%20197.831%2C394.674%2029.044%2C256.875%200%2C292.469%20207.253%2C461.674%20490%2C54.528%20%22%2F%3E%0A%3C%2Fsvg%3E");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}

@@ -3,4 +3,4 @@
 /**/*.DS_Store
 /**/debug.log
 /libs
-/
+/.bowerrc

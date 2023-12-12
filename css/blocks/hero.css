@@ -1,0 +1,90 @@
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  color: var(--color-grey, #fff);
+}
+
+.hero__info {
+  position: relative;
+  z-index: 50;
+  padding-top: 2.2rem;
+}
+
+.hero__advantage {
+  margin-top: 3.7rem;
+}
+
+.hero__button-headered {
+  margin-top: 5.6rem;
+}
+
+.hero__back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.hero__picture {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__picture img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  display: block;
+  width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero__picture::after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+  display: block;
+  min-width: 100%;
+  height: 100%;
+  background: linear-gradient(-270deg, rgba(0, 0, 0, 0.87) 10.87%, rgba(0, 0, 0, 0) 62.32%);
+  content: "";
+}
+
+.hero__hints {
+  display: contents;
+}
+
+.hero__hint {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+}
+
+.hero__hint--top {
+  top: 25.9%;
+  right: 54.4%;
+}
+
+.hero__hint--middle {
+  top: 43.5%;
+  left: 56.8%;
+}
+
+.hero__hint--bottom {
+  top: 67%;
+  left: 52%;
+}

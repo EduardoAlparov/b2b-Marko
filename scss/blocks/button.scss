@@ -1,29 +1,65 @@
 @import '../helpers/mixins.scss';
 
 .button {
-  display: block;
-  padding: 2rem 4rem;
-  
-  color: var(--white);
-  background-color: var(--accent);
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
-  border-radius: 0.4rem;
-
-  transition: var(--transition);
-
-  &__text {
-    display: inline-block;
-  }
-
-  @include breakpointMF(tablet) {
     display: block;
-  }
+    padding: 1.7rem 3.1rem;
 
-  @include hover {
-    color: var(--title);
-    background-color: var(--white);
-    border-color: var(--title);
-  }
+    color: var(--color-dark, #002b45);
+    font: var(--font-main-16);
+    text-align: center;
+    text-transform: uppercase;
+
+    outline: none;
+    transition: var(--transition);
+    cursor: pointer;
+
+    &--grey {
+        background-color: var(--color-back, #e1e1e1);
+    }
+
+    &--small {
+        padding: 1.4rem 2.6rem;
+        font: var(--font-main-14);
+    }
+
+    &:hover {
+        color: var(--color-light, #fbf6ef);
+        background-color: var(--color-blue, #015b91);
+    }
+
+    &--outline {
+        color: var(--color-dark, #002b45);
+        background-color: transparent;
+        border-width: 1px;
+        border-style: solid;
+        border-color: var(--color-dark, #002b45);
+
+        &.button--white {
+            color: var(--color-grey, #fff);
+            border-color: var(--color-grey, #fff);
+        }
+
+        &.button--dark {
+            color: var(--color-dark, #002b45);
+            border-color: var(--color-dark, #002b45);
+        }
+
+        &:hover {
+            color: var(--color-orange, #f2a22e);
+            border-color: var(--color-orange, #f2a22e);
+            background-color: transparent;
+        }
+    }
+
+    &--full {
+        &.button--dark {
+            color: var(--color-light, #fbf6ef);
+            background-color: var(--color-dark, #002b45);
+        }
+
+        &:hover {
+            color: var(--color-light, #fbf6ef);
+             background-color: var(--color-blue, #015b91);
+        }
+    }
 }

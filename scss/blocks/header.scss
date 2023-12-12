@@ -1,0 +1,52 @@
+@import '../helpers/mixins.scss';
+
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    z-index: 200;
+
+    width: 100%;
+    padding: 1.6rem 0;
+
+    color: var(--color-grey, #fff);
+    background-color: rgba($color: var(--color-header, rgb(0, 43, 69)), $alpha: 0.9);
+
+    @include breakpointMF(laptop) {
+        padding: 2.4rem 0;
+    }
+
+    @include breakpointMF(large-desktop) {
+        padding: 3.2rem 0;
+    }
+
+    &__site-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 2rem;
+    }
+
+    &__logo-box {
+        display: flex;
+        align-items: center;
+        column-gap: 3.5rem;
+    }
+
+    &__address {
+        margin-right: 7.6rem;
+    }
+
+    &__contacts-box {
+        display: flex;
+        align-items: center;
+    }
+
+    &__controls {
+        display: flex;
+        align-items: center;
+        column-gap: 2rem;
+    }
+}

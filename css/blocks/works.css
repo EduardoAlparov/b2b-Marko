@@ -1,0 +1,20 @@
+.works {
+  padding: 4.4rem 0 10rem;
+}
+
+.works__dropdowns, .works__controls, .works__navigation {
+  display: flex;
+  align-items: center;
+}
+
+.works__navigation {
+  column-gap: 5.3rem;
+}
+
+.works__dropdowns {
+  column-gap: 1.1rem;
+}
+
+.works__controls {
+  column-gap: 1.1rem;
+}

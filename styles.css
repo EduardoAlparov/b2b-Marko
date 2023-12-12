@@ -1,29 +1,45 @@
 /* RESET, NORMALIZE STYLES: */
-@import url('./css/reset.css');
+@import url("./css/reset.css");
 /* @import url('./css/normalize.css'); */
 
 /* FONTS LOAD SECTION: */
 /* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); */
-@import url('./css/fonts.css');
+@import url("./css/fonts.css");
 
 /* LAYOUTS STYLES: */
-@import url('./css/layout/container.css'); /* chunk '__site-container' is reserved for main site container  */
+@import url("./css/layout/container.css"); /* chunk '__site-container' is reserved for main site container  */
 
-@import url('./css/layout/wrapper.css');
-@import url('./css/layout/header.css');
-@import url('./css/layout/main.css');
-@import url('./css/layout/section.css');
-@import url('./css/layout/footer.css');
-@import url('./css/layout/map.css');
-@import url('./css/layout/modal.css');
+@import url("./css/layout/wrapper.css");
+@import url("./css/layout/main.css");
+@import url("./css/layout/footer.css");
+@import url("./css/layout/map.css");
+@import url("./css/layout/modal.css");
 
 /* UI STYLES: */
-@import url('./css/ui/commons.css');
-@import url('./css/ui/visually-hidden.css');
+@import url("./css/ui/commons.css");
 
 /* BEM BLOCKS(compiled from /scss by https://github.com/ritwickdey/vscode-live-sass-compiler):*/
-@import url('./css/blocks/global.css');
-@import url('./css/blocks/button.css');
+@import url("./css/blocks/global.css");
+@import url("./css/blocks/utils.css");
+@import url("./css/blocks/header.css");
+@import url("./css/blocks/logo.css");
+@import url("./css/blocks/address.css");
+@import url("./css/blocks/socials.css");
+@import url("./css/blocks/button.css");
+@import url("./css/blocks/link.css");
+@import url("./css/blocks/yamaps-link.css");
+/* hero */
+@import url("./css/blocks/hero.css");
+@import url("./css/blocks/advantage.css");
+@import url("./css/blocks/button-headered.css");
+@import url("./css/blocks/hint.css");
+/* advantages */
+@import url("./css/blocks/advantages.css");
+/* works */
+@import url("./css/blocks/works.css");
+@import url("./css/blocks/dropdown.css");
+@import url("./css/blocks/checkbox.css");
+@import url("./css/blocks/work-card.css");
 
 /* VENDORS: */
 /* @import url('./lib/swiper/swiper.css'); */
@@ -31,31 +47,42 @@
 
 /* USER VARIABLES SECTION: */
 :root {
-	/* colors: */
-	--accent: orange;
-	--title: #111;
-	--text: #333;
-	--back: #eee;
-	--white: #fff;
-	--black: #000;
+  /* colors: */
+  --color-dark: #002b45;
+  --color-header: 0, 43, 69;
+  --color-grey: #fff;
+  --color-light: #fbf6ef;
+  --color-extra: #001623;
+  --color-orange: #f2a22e;
+  --color-back: #e1e1e1;
+  --color-blue: #015b91;
+  --color-grey-2: #7c7c7c;
 
-	/* typography: */
-	--main-ff: 'Roboto', sans-serif;
-	--systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
-	--font-body: 400 1.6rem/1.25 var(--main-ff);
+  /* typography: */
+  --main-ff: "Open Sans", sans-serif;
+  --second-ff: "Lora", serif;
+  --systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
 
-	/* etc.: */
-	--transition: 0.3s ease;
+  --font-main-28: 400 2.8rem/1.375 var(--main-ff);
+  --font-main-24: 400 2.4rem/1.375 var(--main-ff);
+  --font-main-20: 400 2rem/1.35 var(--main-ff);
+  --font-main-18: 400 1.8rem/1.39 var(--main-ff);
+  --font-main-16: 400 1.6rem/1.375 var(--main-ff);
+  --font-main-14: 400 1.4rem/1.36 var(--main-ff);
+
+  --font-sec-64: 400 6.4rem/1.28 var(--second-ff);
+  --font-sec-36: 400 3.6rem/1.28 var(--second-ff);
+  --font-sec-24: 400 2.4rem/1.29 var(--second-ff);
+
+  /* etc.: */
+  --transition: 0.3s ease;
 }
 
 body {
-	position: relative;
-
-	min-width: 319px;
-
-	color: var(--text);
-	font: var(--font-body);
-	text-rendering: optimizeSpeed;
-
+  position: relative;
+  min-width: 319px;
+  color: var(--color-dark);
+  font: var(--font-main-16);
+  text-rendering: optimizeSpeed;
   scroll-behavior: smooth;
 }

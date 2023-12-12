@@ -1,0 +1,22 @@
+.works {
+    padding: 4.4rem 0 10rem;
+
+    &__dropdowns,
+    &__controls,
+    &__navigation {
+        display: flex;
+        align-items: center;
+    }
+
+    &__navigation {
+        column-gap: 5.3rem;
+    }
+
+    &__dropdowns {
+        column-gap: 1.1rem;
+    }
+
+    &__controls {
+        column-gap: 1.1rem;
+    }
+}

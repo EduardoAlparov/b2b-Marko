@@ -1,0 +1,51 @@
+@import '../helpers/mixins.scss';
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  white-space: nowrap;
+  border: 0;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+}
+
+._bold-text {
+    font-weight: 700;
+}
+
+._intro-padding-top {
+    padding-top: var(--header-height, 15%);
+}
+
+._text-h1 {
+    font: var(--font-sec-64);
+}
+
+.hide-on-mobile {
+  @include breakpoint(mobile) {
+    display: none !important;
+  }
+}
+
+.hide-on-tablet {
+  @include breakpoint(tablet) {
+    display: none !important;
+  }
+}
+
+.show-on-mobile {
+  @include breakpointMF(small-tablet) {
+    display: none !important;
+  }
+}
+
+.show-on-tablet {
+  @include breakpointMF(laptop) {
+    display: none !important;
+  }
+}

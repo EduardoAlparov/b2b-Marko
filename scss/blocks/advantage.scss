@@ -1,0 +1,45 @@
+@import '../helpers/mixins.scss';
+
+.advantage {
+    display: flex;
+    column-gap: 3.5rem;
+
+    &__image {
+        flex-shrink: 0;
+        width: 3rem;
+        height: 3rem;
+        margin-top: -0.5rem;
+
+        @include breakpointMF(tablet) {
+            width: 7rem;
+            height: 7rem;
+        }
+    }
+
+    &__desc {
+        &.address {
+            margin-top: -0.6rem;
+            font: var(--font-main-24);
+
+            & > strong {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &--bigger {
+        column-gap: 3rem;
+
+        .advantage__desc {
+            &.address {
+                margin-top: unset;
+                font: var(--font-main-28);
+                line-height: 1.178;
+
+                & > strong {
+                    margin-bottom: 0.7rem;
+                }
+            }
+        }
+    }
+}

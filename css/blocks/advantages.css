@@ -1,0 +1,78 @@
+.advantages {
+  position: relative;
+  z-index: 20;
+  background-color: var(--color-light, #fbf6ef);
+}
+
+.advantages__decore {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.advantages__decore .advantages__site-container {
+  max-width: 100%;
+  height: 100%;
+}
+
+.advantages__decore .advantages__body {
+  height: 100%;
+}
+
+.advantages__decore .advantages__picture {
+  flex: 1 1 auto;
+  margin-right: -41.3rem;
+  margin-left: -100%;
+  padding-left: 100%;
+}
+
+.advantages__decore .advantages__list-wrapper {
+  flex: 1 0 calc(100% - 35rem);
+}
+
+.advantages__main {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.advantages__body {
+  display: flex;
+}
+
+.advantages__heading.section__heading {
+  margin-bottom: 6.2rem;
+}
+
+.advantages__picture {
+  position: relative;
+  flex: 0 0 36.3rem;
+}
+
+.advantages__picture img {
+  position: absolute;
+  right: 0;
+  top: 55%;
+  transform: translateY(-50%);
+  z-index: 1;
+  height: 132%;
+  max-width: unset;
+}
+
+.advantages__list-wrapper {
+  flex: 0 1 auto;
+  padding-top: 9.8rem;
+  padding-bottom: 10.5rem;
+}
+
+.advantages__list {
+  display: flex;
+  /* justify-content: space-between; */
+  column-gap: 7rem;
+}
+
+.advantages__item {
+  flex: 1 1 33.33%;
+}

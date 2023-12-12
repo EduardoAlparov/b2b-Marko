@@ -1,0 +1,39 @@
+.work-card {
+    &__heading {
+        margin-bottom: 4.8rem;
+    }
+
+    &__name {
+        display: block;
+        margin-bottom: 2rem;
+        font: var(--font-sec-24);
+        font-weight: 700;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+    }
+
+    &__size {
+        display: block;
+        margin-bottom: 1.6rem;
+        color: var(--color-grey-2, #7c7c7c);
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        column-gap: 1.6rem;
+
+        > a {
+            flex-shrink: 0;
+        }
+    }
+}

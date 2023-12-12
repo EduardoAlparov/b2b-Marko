@@ -1,0 +1,10 @@
+.link {
+    display: block;
+    font: var(--font-main-20);
+    font-weight: 700;
+    transition: var(--transition);
+
+    &:hover {
+        color: var(--color-orange, #f2a22e);
+    }
+}
