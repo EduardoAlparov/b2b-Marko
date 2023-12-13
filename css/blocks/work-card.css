@@ -79,7 +79,7 @@
   .work-card__info {
     display: block;
     width: unset;
-    padding: 4rem 4rem 3.4rem 0;
+    padding: 4rem 2.4rem 3.4rem 0;
   }
 }
 
@@ -117,6 +117,11 @@
 
 .work-card__desc {
   text-align: center;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -129,14 +134,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 3.1rem;
-  margin-left: 0.5rem;
-  column-gap: 4rem;
+  column-gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 @media only screen and (min-width: 1024px) {
   .work-card__list {
-    column-gap: unset;
+    margin-bottom: 3.1rem;
+    margin-left: 0.5rem;
+  }
+}
+
+@media only screen and (min-width: 1201px) {
+  .work-card__list {
+    column-gap: 4rem;
   }
 }
 
@@ -152,7 +163,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -2rem;
+  left: -1rem;
   width: 0.1rem;
   min-width: 1px;
   height: 100%;
@@ -165,6 +176,12 @@
 }
 
 @media only screen and (min-width: 1024px) {
+  .work-card__item::before {
+    left: -2rem;
+  }
+}
+
+@media only screen and (min-width: 1201px) {
   .work-card__item::before {
     left: -4rem;
   }
@@ -207,7 +224,7 @@
   margin-top: 1rem;
 }
 
-@media only screen and (min-width: 421px) {
+@media only screen and (min-width: 1201px) {
   .work-card__buttons > a {
     width: unset;
   }
@@ -216,7 +233,7 @@
   }
 }
 
-@media only screen and (min-width: 421px) {
+@media only screen and (min-width: 1201px) {
   .work-card__buttons {
     flex-flow: row nowrap;
     width: unset;
@@ -234,6 +251,7 @@
 .work-card__slider {
   position: relative;
   overflow: hidden;
+  flex-shrink: 0;
   width: 80%;
   aspect-ratio: 1 / 1.28;
   background-color: lightgray;

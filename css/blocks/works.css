@@ -23,7 +23,7 @@
   content: none;
 }
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1201px) {
   .works::before {
     content: "";
   }
@@ -46,7 +46,7 @@
   margin-bottom: 4rem;
 }
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1024px) {
   .works__navigation {
     display: flex;
     margin-bottom: 2.1rem;
@@ -63,7 +63,7 @@
   column-gap: 1rem;
 }
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1024px) {
   .works__filter-btn.filter-btn {
     display: none;
   }
@@ -104,7 +104,7 @@
   margin-bottom: 0;
 }
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1024px) {
   .works__item {
     width: calc(100% / 2 - (2.4rem / 2));
   }

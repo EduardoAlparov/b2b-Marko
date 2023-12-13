@@ -62,10 +62,11 @@
 }
 
 @mixin maxSizeText($size) {
-  display: -webkit-box;
+    display: -webkit-box;
   overflow: hidden;
   -webkit-line-clamp: $size;
   -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
 }
 
 @mixin hover {

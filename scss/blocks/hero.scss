@@ -82,7 +82,7 @@
     &__hints {
         display: none;
 
-        @include breakpointMF(laptop) {
+        @include breakpointMF(desktop) {
             display: contents;
         }
     }

@@ -76,7 +76,7 @@
         @include breakpointMF(laptop) {
             display: block;
             width: unset;
-            padding: 4rem 4rem 3.4rem 0;
+            padding: 4rem 2.4rem 3.4rem 0;
         }
 
         @include breakpointMF(large-desktop) {
@@ -109,6 +109,8 @@
     &__desc {
         text-align: center;
 
+        @include maxSizeText(1);
+
         @include breakpointMF(laptop) {
             text-align: left;
         }
@@ -118,12 +120,16 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 3.1rem;
-        margin-left: 0.5rem;
-        column-gap: 4rem;
+        column-gap: 2rem;
+        margin-bottom: 2rem;
 
         @include breakpointMF(laptop) {
-            column-gap: unset;
+            margin-bottom: 3.1rem;
+            margin-left: 0.5rem;
+        }
+
+        @include breakpointMF(desktop) {
+            column-gap: 4rem;
         }
     }
 
@@ -138,7 +144,7 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            left: -2rem;
+            left: -1rem;
             width: 0.1rem;
             min-width: 1px;
             height: 100%;
@@ -154,6 +160,12 @@
         }
 
         @include breakpointMF(laptop) {
+            &::before {
+                left: -2rem;
+            }
+        }
+
+        @include breakpointMF(desktop) {
             &::before {
                 left: -4rem;
             }
@@ -194,15 +206,16 @@
                 margin-top: 1rem;
             }
 
-            @include breakpointMF(supersmall-mobile) {
+            @include breakpointMF(desktop) {
                 width: unset;
+
                 &:last-child {
                     margin-top: unset;
                 }
             }
         }
 
-        @include breakpointMF(supersmall-mobile) {
+        @include breakpointMF(desktop) {
             flex-flow: row nowrap;
             width: unset;
         }
@@ -218,6 +231,7 @@
     &__slider {
         position: relative;
         overflow: hidden;
+        flex-shrink: 0;
         width: 80%;
         aspect-ratio: 1 / 1.28;
         background-color: lightgray;

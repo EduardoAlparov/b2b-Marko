@@ -3,10 +3,7 @@
 .advantages {
     position: relative;
     z-index: 20;
-
     background-color: var(--color-light, #fbf6ef);
-
-
 
     &__decore {
         position: absolute;
@@ -71,7 +68,7 @@
         flex: 0 0 35.3rem;
         display: none;
 
-        @include breakpointMF(laptop) {
+        @include breakpointMF(desktop) {
             display: block;
         }
 
