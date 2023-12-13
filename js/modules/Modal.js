@@ -60,7 +60,7 @@ export default class Modal {
 
       this.modals.forEach((mdl)=>{
         mdl.addEventListener('click', function (e) {
-          if (!e.target.classList.contains('modal__content') && !e.target.closest('.modal__content') && this.isOpen) {
+          if (!e.target.classList.contains('.modal__content') && !e.target.closest('.modal__content') && this.isOpen) {
             this.close();
           }
         }.bind(this));

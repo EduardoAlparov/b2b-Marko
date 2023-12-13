@@ -2,15 +2,25 @@
 
 .advantage {
     display: flex;
-    column-gap: 3.5rem;
+    column-gap: 2rem;
+
+    @include breakpointMF(large-desktop) {
+        column-gap: 3rem;
+    }
 
     &__image {
         flex-shrink: 0;
         width: 3rem;
         height: 3rem;
-        margin-top: -0.5rem;
+        margin-left: 0.5rem;
 
         @include breakpointMF(tablet) {
+            width: 5rem;
+            height: 5rem;
+            margin-top: -0.5rem;
+        }
+
+        @include breakpointMF(large-desktop) {
             width: 7rem;
             height: 7rem;
         }
@@ -18,8 +28,11 @@
 
     &__desc {
         &.address {
-            margin-top: -0.6rem;
             font: var(--font-main-24);
+
+            @include breakpointMF(tablet) {
+                margin-top: -0.6rem;
+            }
 
             & > strong {
                 margin-bottom: 0;
@@ -28,8 +41,6 @@
     }
 
     &--bigger {
-        column-gap: 3rem;
-
         .advantage__desc {
             &.address {
                 margin-top: unset;
@@ -40,6 +51,10 @@
                     margin-bottom: 0.7rem;
                 }
             }
+        }
+
+        .advantage__image {
+            margin-left: unset;
         }
     }
 }

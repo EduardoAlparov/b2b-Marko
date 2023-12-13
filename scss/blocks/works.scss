@@ -1,5 +1,40 @@
+@import '../helpers/mixins.scss';
+
 .works {
-    padding: 4.4rem 0 10rem;
+    position: relative;
+    overflow: hidden;
+
+    padding: 2.4rem 0 5rem;
+
+    @include breakpointMF(desktop) {
+        padding: 4.4rem 0 7.6rem;
+    }
+
+    $m: 2.4rem;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        z-index: -1;
+
+        display: block;
+        width: 40%;
+        aspect-ratio: 1.84 / 1;
+
+        transform: translateX(77%);
+        border: 1px solid var(--color-dark, #002b45);
+        content: none;
+
+        @include breakpointMF(laptop) {
+            content: "";
+        }
+
+        @include breakpointMF(large-desktop) {
+            transform: translateX(37%);
+        }
+
+    }
 
     &__dropdowns,
     &__controls,
@@ -9,14 +44,85 @@
     }
 
     &__navigation {
-        column-gap: 5.3rem;
+        display: none;
+        column-gap: 5.6rem;
+        margin-bottom: 4rem;
+
+        @include breakpointMF(laptop) {
+            display: flex;
+            margin-bottom: 2.1rem;
+        }
+    }
+
+    &__filter-btn {
+        margin-bottom: 4rem;
+        &.filter-btn {
+            display: flex;
+            align-items: center;
+            column-gap: 1rem;
+
+            @include breakpointMF(laptop) {
+               display: none;
+            }
+
+            span {
+                display: block;
+                font: var(--font-main-18);
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+
+            .icon {
+                width: 2.6rem;
+                height: 2.6rem;
+            }
+        }
     }
 
     &__dropdowns {
-        column-gap: 1.1rem;
+        column-gap: 1.2rem;
     }
 
     &__controls {
         column-gap: 1.1rem;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__item {
+        width: 100%;
+        margin-bottom: 3rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @include breakpointMF(laptop) {
+            width: calc(100% / 2 - (2.4rem / 2));
+
+            &:nth-child(even) {
+                margin: ($m / 2) 0 ($m / 2) ($m / 2);
+            }
+
+            &:nth-child(odd) {
+                margin: ($m / 2) ($m / 2) ($m / 2) 0;
+            }
+        }
+
+        @include breakpointMF(large-desktop) {
+            width: calc(100% / 2 - (4.8rem / 2));
+
+            &:nth-child(even) {
+                margin: $m 0 $m $m;
+            }
+
+            &:nth-child(odd) {
+                margin: $m $m $m 0;
+            }
+        }
     }
 }

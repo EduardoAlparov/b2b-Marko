@@ -1,23 +1,42 @@
 .yamaps-link {
   display: flex;
   align-items: center;
-  column-gap: 0.5rem;
+  column-gap: 0.3rem;
   flex-shrink: 0;
 }
 
 .yamaps-link span {
   flex-shrink: 0;
   display: block;
-  width: 5.7rem;
+  width: 3.8rem;
   aspect-ratio: 1;
   background-image: url("../../images/ya-pin.png");
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
+  will-change: transform;
+  transition: var(--transition);
+}
+
+@media only screen and (min-width: 769px) {
+  .yamaps-link span {
+    width: 5.7rem;
+  }
 }
 
 .yamaps-link .icon {
   flex-shrink: 0;
-  width: 12rem;
-  height: 5.84rem;
+  width: 8rem;
+  height: 3.9rem;
+}
+
+@media only screen and (min-width: 769px) {
+  .yamaps-link .icon {
+    width: 12rem;
+    height: 5.84rem;
+  }
+}
+
+.yamaps-link:hover span {
+  transform: scale(1.04);
 }

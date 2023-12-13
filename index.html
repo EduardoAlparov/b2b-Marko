@@ -7,19 +7,25 @@
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <link rel="icon" href="images/favicon.png">
         <meta property="og:image" content="images/preview.jpg">
+        <link rel="icon" href="images/favicon.png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link
             href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
             rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         <link rel="stylesheet" href="./styles.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
         <script src="js/main.js" type="module" defer></script>
     </head>
-    <body class="preload">
+    <body class="preload animate-trigger">
         <div class="wrapper">
-            <header class="header">
+            <header class="header fix-block">
                 <div class="header__site-container">
                     <div class="header__logo-box">
                         <a href="/" class="logo">
@@ -27,7 +33,7 @@
                                 <use xlink:href="./images/sprite.svg#logo"></use>
                             </svg>
                         </a>
-                        <a href="https://yandex.ru/maps/-/CDqVEXpj" class="yamaps-link" target="_blank">
+                        <a href="https://yandex.ru/maps/-/CDqVEXpj" class="header__yamaps-link yamaps-link" target="_blank">
                             <span></span>
                             <svg class="icon">
                                 <use xlink:href="./images/sprite.svg#ya-link"></use>
@@ -60,8 +66,9 @@
                             </button>
                         </div>
                     </div>
-                    <button class="header__hamburger hamburger show-on-tablet" type="button">
-                        hamburger
+                    <button class="header__hamburger hamburger show-on-tablet btn-menu" type="button" data-path="modal-menu">
+                        <i class="btn-menu__bars" aria-hidden="true"></i>
+                        <span class="visually-hidden">Menu</span>
                     </button>
                 </div>
             </header>
@@ -98,7 +105,7 @@
                         <div class="hero__picture">
                             <picture>
                                 <source type="image/webp" srcset="./images/hero-back.jpg" alt="hero image">
-                                <img src="./images/hero-back.jpg" alt="hero image">
+                                <img class="lazy" src="./images/hero-back.jpg" alt="hero image">
                             </picture>
                             <div class="hero__hints">
                                 <div class="hero__hint hero__hint--top">
@@ -120,7 +127,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="section advantages">
+                <section id="scroll-trigger" class="section advantages animate-trigger">
                     <div class="advantages__main">
                         <div class="advantages__site-container">
                             <div class="advantages__body">
@@ -174,7 +181,7 @@
                                 <div class="advantages__picture">
                                     <picture>
                                         <source type="image/webp" srcset="./images/advantages-image.png" alt="advantages image">
-                                        <img src="./images/advantages-image.png" alt="advantages image">
+                                        <img class="lazy" src="./images/advantages-image.png" alt="advantages image">
                                     </picture>
                                 </div>
                                 <div class="advantages__list-wrapper"></div>
@@ -204,35 +211,65 @@
                                                 <ul class="dropdown__list">
                                                     <li class="dropdown__item">
                                                         <label class="checkbox">
-                                                            <input type="checkbox" class="checkbox__input visually-hidden" id="checkbox-one" value="100" hidden>
+                                                            <input
+                                                                type="checkbox"
+                                                                class="checkbox__input visually-hidden"
+                                                                name="color-type"
+                                                                id="checkbox-type-one"
+                                                                value="100"
+                                                                hidden>
                                                             <i class="checkbox__custom-input"></i>
                                                             <span class="checkbox__text" data-counter="100">Прямые</span>
                                                         </label>
                                                     </li>
                                                     <li class="dropdown__item">
                                                         <label class="checkbox">
-                                                            <input type="checkbox" class="checkbox__input visually-hidden" id="checkbox-two" value="200" hidden>
+                                                            <input
+                                                                type="checkbox"
+                                                                class="checkbox__input visually-hidden"
+                                                                name="color-type"
+                                                                id="checkbox-type-two"
+                                                                value="200"
+                                                                hidden>
                                                             <i class="checkbox__custom-input"></i>
                                                             <span class="checkbox__text" data-counter="200">Угловые</span>
                                                         </label>
                                                     </li>
                                                     <li class="dropdown__item">
                                                         <label class="checkbox">
-                                                            <input type="checkbox" class="checkbox__input visually-hidden" id="checkbox-three" value="225" hidden>
+                                                            <input
+                                                                type="checkbox"
+                                                                class="checkbox__input visually-hidden"
+                                                                name="color-type"
+                                                                id="checkbox-type-three"
+                                                                value="225"
+                                                                hidden>
                                                             <i class="checkbox__custom-input"></i>
                                                             <span class="checkbox__text" data-counter="200">С островом</span>
                                                         </label>
                                                     </li>
                                                     <li class="dropdown__item">
                                                         <label class="checkbox">
-                                                            <input type="checkbox" class="checkbox__input visually-hidden" id="checkbox-four" value="120" hidden>
+                                                            <input
+                                                                type="checkbox"
+                                                                class="checkbox__input visually-hidden"
+                                                                name="color-type"
+                                                                id="checkbox-type-four"
+                                                                value="120"
+                                                                hidden>
                                                             <i class="checkbox__custom-input"></i>
                                                             <span class="checkbox__text" data-counter="200">Трёхъярусные</span>
                                                         </label>
                                                     </li>
                                                     <li class="dropdown__item">
                                                         <label class="checkbox">
-                                                            <input type="checkbox" class="checkbox__input visually-hidden" id="checkbox-five" value="170" hidden>
+                                                            <input
+                                                                type="checkbox"
+                                                                class="checkbox__input visually-hidden"
+                                                                name="color-type"
+                                                                id="checkbox-type-five"
+                                                                value="170"
+                                                                hidden>
                                                             <i class="checkbox__custom-input"></i>
                                                             <span class="checkbox__text" data-counter="200">П-образные</span>
                                                         </label>
@@ -255,14 +292,26 @@
                                                 <ul class="dropdown__list">
                                                     <li class="dropdown__item">
                                                         <label class="checkbox">
-                                                            <input type="checkbox" class="checkbox__input visually-hidden" id="checkbox-style-1" value="checkbox-style-1" hidden>
+                                                            <input
+                                                                type="checkbox"
+                                                                class="checkbox__input visually-hidden"
+                                                                name="color-style"
+                                                                id="checkbox-style-1"
+                                                                value="checkbox-style-1"
+                                                                hidden>
                                                             <i class="checkbox__custom-input"></i>
                                                             <span class="checkbox__text">Cтиль 1</span>
                                                         </label>
                                                     </li>
                                                     <li class="dropdown__item">
                                                         <label class="checkbox">
-                                                            <input type="checkbox" class="checkbox__input visually-hidden" id="checkbox-style-2" value="checkbox-style-2" hidden>
+                                                            <input
+                                                                type="checkbox"
+                                                                class="checkbox__input visually-hidden"
+                                                                name="color-style"
+                                                                id="checkbox-style-2"
+                                                                value="checkbox-style-2"
+                                                                hidden>
                                                             <i class="checkbox__custom-input"></i>
                                                             <span class="checkbox__text">Cтиль 2</span>
                                                         </label>
@@ -285,14 +334,26 @@
                                                 <ul class="dropdown__list">
                                                     <li class="dropdown__item">
                                                         <label class="checkbox">
-                                                            <input type="checkbox" class="checkbox__input visually-hidden" id="checkbox-color-1" value="checkbox-color-1" hidden>
+                                                            <input
+                                                                type="checkbox"
+                                                                class="checkbox__input visually-hidden"
+                                                                name="color-value"
+                                                                id="checkbox-color-1"
+                                                                value="checkbox-color-1"
+                                                                hidden>
                                                             <i class="checkbox__custom-input"></i>
                                                             <span class="checkbox__text">Цвет 1</span>
                                                         </label>
                                                     </li>
                                                     <li class="dropdown__item">
                                                         <label class="checkbox">
-                                                            <input type="checkbox" class="checkbox__input visually-hidden" id="checkbox-color-2" value="checkbox-color-2" hidden>
+                                                            <input
+                                                                type="checkbox"
+                                                                class="checkbox__input visually-hidden"
+                                                                name="color-value"
+                                                                id="checkbox-color-2"
+                                                                value="checkbox-color-2"
+                                                                hidden>
                                                             <i class="checkbox__custom-input"></i>
                                                             <span class="checkbox__text">Цвет 2</span>
                                                         </label>
@@ -309,14 +370,207 @@
                                     <input class="button button--dark button--outline" type="reset" value="сбросить">
                                 </div>
                             </form>
+                            <button data-path="modal-filters" type="button" class="works__filter-btn filter-btn">
+                                <span>
+                                    Фильтры
+                                </span>
+                                <svg class="icon">
+                                    <use xlink:href="./images/sprite.svg#filters"></use>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                     <div class="works__list-wrapper">
                         <div class="works__site-container">
                             <ul class="works__list">
-                                <li class="works__item work-card">
+                                <li class="works__item work-card" id="work-card-id-1" data-id="work-card-data-1">
                                     <div class="work-card__body">
-                                        <div class="work-card__slider"></div>
+                                        <div class="work-card__slider">
+                                            <div class="work-card__main-swiper swiper">
+                                                <ul class="swiper-wrapper">
+                                                    <li class="work-card__main-swiper-slide swiper-slide">
+                                                        <a href="./images/slider-pic.jpg" class="work-card__main-swiper-link" data-fancybox data-caption="Work image">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="./images/slider-pic.jpg" alt="work image">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </picture>
+                                                        </a>
+                                                    </li>
+                                                    <li class="work-card__main-swiper-slide swiper-slide">
+                                                        <a href="./images/slider-pic.jpg" class="work-card__main-swiper-link" data-fancybox data-caption="Work image">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="./images/slider-pic.jpg" alt="work image">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </picture>
+                                                        </a>
+                                                    </li>
+                                                    <li class="work-card__main-swiper-slide swiper-slide">
+                                                        <a href="./images/slider-pic.jpg" class="work-card__main-swiper-link" data-fancybox data-caption="Work image">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="./images/slider-pic.jpg" alt="work image">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </picture>
+                                                        </a>
+                                                    </li>
+                                                    <li class="work-card__main-swiper-slide swiper-slide">
+                                                        <a href="./images/slider-pic.jpg" class="work-card__main-swiper-link" data-fancybox data-caption="Work image">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="./images/slider-pic.jpg" alt="work image">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </picture>
+                                                        </a>
+                                                    </li>
+                                                    <li class="work-card__main-swiper-slide swiper-slide">
+                                                        <a href="./images/slider-pic.jpg" class="work-card__main-swiper-link" data-fancybox data-caption="Work image">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="./images/slider-pic.jpg" alt="work image">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </picture>
+                                                        </a>
+                                                    </li>
+                                                    <li class="work-card__main-swiper-slide swiper-slide">
+                                                        <a href="./images/slider-pic.jpg" class="work-card__main-swiper-link" data-fancybox data-caption="Work image">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="./images/slider-pic.jpg" alt="work image">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </picture>
+                                                        </a>
+                                                    </li>
+                                                    <li class="work-card__main-swiper-slide swiper-slide">
+                                                        <a href="./images/slider-pic.jpg" class="work-card__main-swiper-link" data-fancybox data-caption="Work image">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="./images/slider-pic.jpg" alt="work image">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </picture>
+                                                        </a>
+                                                    </li>
+                                                    <li class="work-card__main-swiper-slide swiper-slide">
+                                                        <a href="./images/slider-pic.jpg" class="work-card__main-swiper-link" data-fancybox data-caption="Work image">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="./images/slider-pic.jpg" alt="work image">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </picture>
+                                                        </a>
+                                                    </li>
+                                                    <li class="work-card__main-swiper-slide swiper-slide">
+                                                        <a href="./images/slider-pic.jpg" class="work-card__main-swiper-link" data-fancybox data-caption="Work image">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="./images/slider-pic.jpg" alt="work image">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </picture>
+                                                        </a>
+                                                    </li>
+                                                    <li class="work-card__main-swiper-slide swiper-slide">
+                                                        <a href="./images/slider-pic.jpg" class="work-card__main-swiper-link" data-fancybox data-caption="Work image">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="./images/slider-pic.jpg" alt="work image">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </picture>
+                                                        </a>
+                                                    </li>
+                                                    <li class="work-card__main-swiper-slide swiper-slide">
+                                                        <a href="./images/slider-pic.jpg" class="work-card__main-swiper-link" data-fancybox data-caption="Work image">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="./images/slider-pic.jpg" alt="work image">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </picture>
+                                                        </a>
+                                                    </li>
+                                                    <li class="work-card__main-swiper-slide swiper-slide">
+                                                        <a href="./images/slider-pic.jpg" class="work-card__main-swiper-link" data-fancybox data-caption="Work image">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="./images/slider-pic.jpg" alt="work image">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </picture>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="work-card__thumbs-wrapper">
+                                                <div class="work-card__slider-control">
+                                                    <div class="work-card__slider-pagination">
+                                                        <span class="work-card__pagination-count">01</span>
+                                                        <span class="work-card__pagination-total">10</span>
+                                                    </div>
+                                                    <div class="work-card__slider-navigation">
+                                                        <button class="work-card__navigation-prev">
+                                                            <svg class="icon work-card__icon">
+                                                                <use xlink:href="./images/sprite.svg#prev"></use>
+                                                            </svg>
+                                                        </button>
+                                                        <button class="work-card__navigation-next">
+                                                            <svg class="icon work-card__icon">
+                                                                <use xlink:href="./images/sprite.svg#prev"></use>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="work-card__thumbs-swiper swiper">
+                                                    <ul class="swiper-wrapper">
+                                                        <li class="work-card__thumbs-swiper-slide swiper-slide">
+                                                            <button class="work-card__thumb">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </button>
+                                                        </li>
+                                                        <li class="work-card__thumbs-swiper-slide swiper-slide">
+                                                            <button class="work-card__thumb">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </button>
+                                                        </li>
+                                                        <li class="work-card__thumbs-swiper-slide swiper-slide">
+                                                            <button class="work-card__thumb">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </button>
+                                                        </li>
+                                                        <li class="work-card__thumbs-swiper-slide swiper-slide">
+                                                            <button class="work-card__thumb">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </button>
+                                                        </li>
+                                                        <li class="work-card__thumbs-swiper-slide swiper-slide">
+                                                            <button class="work-card__thumb">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </button>
+                                                        </li>
+                                                        <li class="work-card__thumbs-swiper-slide swiper-slide">
+                                                            <button class="work-card__thumb">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </button>
+                                                        </li>
+                                                        <li class="work-card__thumbs-swiper-slide swiper-slide">
+                                                            <button class="work-card__thumb">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </button>
+                                                        </li>
+                                                        <li class="work-card__thumbs-swiper-slide swiper-slide">
+                                                            <button class="work-card__thumb">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </button>
+                                                        </li>
+                                                        <li class="work-card__thumbs-swiper-slide swiper-slide">
+                                                            <button class="work-card__thumb">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </button>
+                                                        </li>
+                                                        <li class="work-card__thumbs-swiper-slide swiper-slide">
+                                                            <button class="work-card__thumb">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </button>
+                                                        </li>
+                                                        <li class="work-card__thumbs-swiper-slide swiper-slide">
+                                                            <button class="work-card__thumb">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </button>
+                                                        </li>
+                                                        <li class="work-card__thumbs-swiper-slide swiper-slide">
+                                                            <button class="work-card__thumb">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="work-card__info">
                                             <div class="work-card__heading">
                                                 <span class="work-card__name">
@@ -328,15 +582,381 @@
                                             </div>
                                             <ul class="work-card__list">
                                                 <li class="work-card__item">
-                                                    <span class="work-card__key">Эконом</span>
+                                                    <span class="work-card__key _bold-text">Эконом</span>
                                                     <span class="work-card__value">168 000 р.</span>
                                                 </li>
                                                 <li class="work-card__item">
-                                                    <span class="work-card__key">Стандарт</span>
+                                                    <span class="work-card__key _bold-text">Стандарт</span>
                                                     <span class="work-card__value">217 000 р.</span>
                                                 </li>
                                                 <li class="work-card__item">
-                                                    <span class="work-card__key">Премиум</span>
+                                                    <span class="work-card__key _bold-text">Премиум</span>
+                                                    <span class="work-card__value">270 000 р.</span>
+                                                </li>
+                                            </ul>
+                                            <span class="work-card__size">
+                                                <strong>Длина кухни:</strong>
+                                                4900 мм
+                                            </span>
+                                            <div class="work-card__buttons">
+                                                <a href="#" target="_blank" class="button button--full button--dark">
+                                                    Подробнее
+                                                </a>
+                                                <a href="#" target="_blank" class="button button--dark button--outline">
+                                                    Расчет стоимости
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="works__item work-card" id="work-card-id-2" data-id="work-card-data-2">
+                                    <div class="work-card__body">
+                                        <div class="work-card__slider">
+                                            <div class="work-card__main-swiper swiper">
+                                                <ul class="swiper-wrapper">
+                                                    <li class="work-card__main-swiper-slide swiper-slide">
+                                                        <a href="./images/slider-pic.jpg" class="work-card__main-swiper-link" data-fancybox data-caption="Work image">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="./images/slider-pic.jpg" alt="work image">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </picture>
+                                                        </a>
+                                                    </li>
+                                                    <li class="work-card__main-swiper-slide swiper-slide">
+                                                        <a href="./images/slider-pic.jpg" class="work-card__main-swiper-link" data-fancybox data-caption="Work image">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="./images/slider-pic.jpg" alt="work image">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </picture>
+                                                        </a>
+                                                    </li>
+                                                    <li class="work-card__main-swiper-slide swiper-slide">
+                                                        <a href="./images/slider-pic.jpg" class="work-card__main-swiper-link" data-fancybox data-caption="Work image">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="./images/slider-pic.jpg" alt="work image">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </picture>
+                                                        </a>
+                                                    </li>
+                                                    <li class="work-card__main-swiper-slide swiper-slide">
+                                                        <a href="./images/slider-pic.jpg" class="work-card__main-swiper-link" data-fancybox data-caption="Work image">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="./images/slider-pic.jpg" alt="work image">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </picture>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="work-card__thumbs-wrapper">
+                                                <div class="work-card__slider-control">
+                                                    <div class="work-card__slider-pagination">
+                                                        <span class="work-card__pagination-count">01</span>
+                                                        <span class="work-card__pagination-total">10</span>
+                                                    </div>
+                                                    <div class="work-card__slider-navigation">
+                                                        <button class="work-card__navigation-prev">
+                                                            <svg class="icon work-card__icon">
+                                                                <use xlink:href="./images/sprite.svg#prev"></use>
+                                                            </svg>
+                                                        </button>
+                                                        <button class="work-card__navigation-next">
+                                                            <svg class="icon work-card__icon">
+                                                                <use xlink:href="./images/sprite.svg#prev"></use>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="work-card__thumbs-swiper swiper">
+                                                    <ul class="swiper-wrapper">
+                                                        <li class="work-card__thumbs-swiper-slide swiper-slide">
+                                                            <button class="work-card__thumb">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </button>
+                                                        </li>
+                                                        <li class="work-card__thumbs-swiper-slide swiper-slide">
+                                                            <button class="work-card__thumb">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </button>
+                                                        </li>
+                                                        <li class="work-card__thumbs-swiper-slide swiper-slide">
+                                                            <button class="work-card__thumb">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </button>
+                                                        </li>
+                                                        <li class="work-card__thumbs-swiper-slide swiper-slide">
+                                                            <button class="work-card__thumb">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="work-card__info">
+                                            <div class="work-card__heading">
+                                                <span class="work-card__name">
+                                                    Кухня 097 минимализм
+                                                </span>
+                                                <p class="work-card__desc">
+                                                    Угловая белая кухня со столешницей под бетон.
+                                                </p>
+                                            </div>
+                                            <ul class="work-card__list">
+                                                <li class="work-card__item">
+                                                    <span class="work-card__key _bold-text">Эконом</span>
+                                                    <span class="work-card__value">168 000 р.</span>
+                                                </li>
+                                                <li class="work-card__item">
+                                                    <span class="work-card__key _bold-text">Стандарт</span>
+                                                    <span class="work-card__value">217 000 р.</span>
+                                                </li>
+                                                <li class="work-card__item">
+                                                    <span class="work-card__key _bold-text">Премиум</span>
+                                                    <span class="work-card__value">270 000 р.</span>
+                                                </li>
+                                            </ul>
+                                            <span class="work-card__size">
+                                                <strong>Длина кухни:</strong>
+                                                4900 мм
+                                            </span>
+                                            <div class="work-card__buttons">
+                                                <a href="#" target="_blank" class="button button--full button--dark">
+                                                    Подробнее
+                                                </a>
+                                                <a href="#" target="_blank" class="button button--dark button--outline">
+                                                    Расчет стоимости
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="works__item work-card" id="work-card-id-3" data-id="work-card-data-3">
+                                    <div class="work-card__body">
+                                        <div class="work-card__slider">
+                                            <div class="work-card__main-swiper swiper">
+                                                <ul class="swiper-wrapper">
+                                                    <li class="work-card__main-swiper-slide swiper-slide">
+                                                        <a href="./images/slider-pic.jpg" class="work-card__main-swiper-link" data-fancybox data-caption="Work image">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="./images/slider-pic.jpg" alt="work image">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </picture>
+                                                        </a>
+                                                    </li>
+                                                    <li class="work-card__main-swiper-slide swiper-slide">
+                                                        <a href="./images/slider-pic.jpg" class="work-card__main-swiper-link" data-fancybox data-caption="Work image">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="./images/slider-pic.jpg" alt="work image">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </picture>
+                                                        </a>
+                                                    </li>
+                                                    <li class="work-card__main-swiper-slide swiper-slide">
+                                                        <a href="./images/slider-pic.jpg" class="work-card__main-swiper-link" data-fancybox data-caption="Work image">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="./images/slider-pic.jpg" alt="work image">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </picture>
+                                                        </a>
+                                                    </li>
+                                                    <li class="work-card__main-swiper-slide swiper-slide">
+                                                        <a href="./images/slider-pic.jpg" class="work-card__main-swiper-link" data-fancybox data-caption="Work image">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="./images/slider-pic.jpg" alt="work image">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </picture>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="work-card__thumbs-wrapper">
+                                                <div class="work-card__slider-control">
+                                                    <div class="work-card__slider-pagination">
+                                                        <span class="work-card__pagination-count">01</span>
+                                                        <span class="work-card__pagination-total">10</span>
+                                                    </div>
+                                                    <div class="work-card__slider-navigation">
+                                                        <button class="work-card__navigation-prev">
+                                                            <svg class="icon work-card__icon">
+                                                                <use xlink:href="./images/sprite.svg#prev"></use>
+                                                            </svg>
+                                                        </button>
+                                                        <button class="work-card__navigation-next">
+                                                            <svg class="icon work-card__icon">
+                                                                <use xlink:href="./images/sprite.svg#prev"></use>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="work-card__thumbs-swiper swiper">
+                                                    <ul class="swiper-wrapper">
+                                                        <li class="work-card__thumbs-swiper-slide swiper-slide">
+                                                            <button class="work-card__thumb">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </button>
+                                                        </li>
+                                                        <li class="work-card__thumbs-swiper-slide swiper-slide">
+                                                            <button class="work-card__thumb">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </button>
+                                                        </li>
+                                                        <li class="work-card__thumbs-swiper-slide swiper-slide">
+                                                            <button class="work-card__thumb">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </button>
+                                                        </li>
+                                                        <li class="work-card__thumbs-swiper-slide swiper-slide">
+                                                            <button class="work-card__thumb">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="work-card__info">
+                                            <div class="work-card__heading">
+                                                <span class="work-card__name">
+                                                    Кухня 097 минимализм
+                                                </span>
+                                                <p class="work-card__desc">
+                                                    Угловая белая кухня со столешницей под бетон.
+                                                </p>
+                                            </div>
+                                            <ul class="work-card__list">
+                                                <li class="work-card__item">
+                                                    <span class="work-card__key _bold-text">Эконом</span>
+                                                    <span class="work-card__value">168 000 р.</span>
+                                                </li>
+                                                <li class="work-card__item">
+                                                    <span class="work-card__key _bold-text">Стандарт</span>
+                                                    <span class="work-card__value">217 000 р.</span>
+                                                </li>
+                                                <li class="work-card__item">
+                                                    <span class="work-card__key _bold-text">Премиум</span>
+                                                    <span class="work-card__value">270 000 р.</span>
+                                                </li>
+                                            </ul>
+                                            <span class="work-card__size">
+                                                <strong>Длина кухни:</strong>
+                                                4900 мм
+                                            </span>
+                                            <div class="work-card__buttons">
+                                                <a href="#" target="_blank" class="button button--full button--dark">
+                                                    Подробнее
+                                                </a>
+                                                <a href="#" target="_blank" class="button button--dark button--outline">
+                                                    Расчет стоимости
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="works__item work-card" id="work-card-id-4" data-id="work-card-data-4">
+                                    <div class="work-card__body">
+                                        <div class="work-card__slider">
+                                            <div class="work-card__main-swiper swiper">
+                                                <ul class="swiper-wrapper">
+                                                    <li class="work-card__main-swiper-slide swiper-slide">
+                                                        <a href="./images/slider-pic.jpg" class="work-card__main-swiper-link" data-fancybox data-caption="Work image">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="./images/slider-pic.jpg" alt="work image">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </picture>
+                                                        </a>
+                                                    </li>
+                                                    <li class="work-card__main-swiper-slide swiper-slide">
+                                                        <a href="./images/slider-pic.jpg" class="work-card__main-swiper-link" data-fancybox data-caption="Work image">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="./images/slider-pic.jpg" alt="work image">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </picture>
+                                                        </a>
+                                                    </li>
+                                                    <li class="work-card__main-swiper-slide swiper-slide">
+                                                        <a href="./images/slider-pic.jpg" class="work-card__main-swiper-link" data-fancybox data-caption="Work image">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="./images/slider-pic.jpg" alt="work image">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </picture>
+                                                        </a>
+                                                    </li>
+                                                    <li class="work-card__main-swiper-slide swiper-slide">
+                                                        <a href="./images/slider-pic.jpg" class="work-card__main-swiper-link" data-fancybox data-caption="Work image">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="./images/slider-pic.jpg" alt="work image">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </picture>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="work-card__thumbs-wrapper">
+                                                <div class="work-card__slider-control">
+                                                    <div class="work-card__slider-pagination">
+                                                        <span class="work-card__pagination-count">01</span>
+                                                        <span class="work-card__pagination-total">10</span>
+                                                    </div>
+                                                    <div class="work-card__slider-navigation">
+                                                        <button class="work-card__navigation-prev">
+                                                            <svg class="icon work-card__icon">
+                                                                <use xlink:href="./images/sprite.svg#prev"></use>
+                                                            </svg>
+                                                        </button>
+                                                        <button class="work-card__navigation-next">
+                                                            <svg class="icon work-card__icon">
+                                                                <use xlink:href="./images/sprite.svg#prev"></use>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="work-card__thumbs-swiper swiper">
+                                                    <ul class="swiper-wrapper">
+                                                        <li class="work-card__thumbs-swiper-slide swiper-slide">
+                                                            <button class="work-card__thumb">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </button>
+                                                        </li>
+                                                        <li class="work-card__thumbs-swiper-slide swiper-slide">
+                                                            <button class="work-card__thumb">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </button>
+                                                        </li>
+                                                        <li class="work-card__thumbs-swiper-slide swiper-slide">
+                                                            <button class="work-card__thumb">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </button>
+                                                        </li>
+                                                        <li class="work-card__thumbs-swiper-slide swiper-slide">
+                                                            <button class="work-card__thumb">
+                                                                <img class="lazy" src="./images/slider-pic.jpg" alt="work image">
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="work-card__info">
+                                            <div class="work-card__heading">
+                                                <span class="work-card__name">
+                                                    Кухня 097 минимализм
+                                                </span>
+                                                <p class="work-card__desc">
+                                                    Угловая белая кухня со столешницей под бетон.
+                                                </p>
+                                            </div>
+                                            <ul class="work-card__list">
+                                                <li class="work-card__item">
+                                                    <span class="work-card__key _bold-text">Эконом</span>
+                                                    <span class="work-card__value">168 000 р.</span>
+                                                </li>
+                                                <li class="work-card__item">
+                                                    <span class="work-card__key _bold-text">Стандарт</span>
+                                                    <span class="work-card__value">217 000 р.</span>
+                                                </li>
+                                                <li class="work-card__item">
+                                                    <span class="work-card__key _bold-text">Премиум</span>
                                                     <span class="work-card__value">270 000 р.</span>
                                                 </li>
                                             </ul>
@@ -369,8 +989,39 @@
                             <use xlink:href="./images/sprite.svg#close"></use>
                         </svg>
                     </button>
+                    <h6 class="modal__title">
+                        Обратная связь
+                    </h6>
+                </div>
+            </div>
+        </div>
+        <div class="modal modal--menu">
+            <div class="modal__container" data-target="modal-menu">
+                <div class="modal__content">
+                    <button type="button" class="modal__close-btn modal__close-btn--menu modal-close">
+                        <svg class="icon">
+                            <use xlink:href="./images/sprite.svg#close"></use>
+                        </svg>
+                    </button>
+                    <h6 class="modal__title">
+                        Мобильное меню
+                    </h6>
+                </div>
+            </div>
+        </div>
+        <div class="modal modal--filters">
+            <div class="modal__container" data-target="modal-filters">
+                <div class="modal__content">
+                    <button type="button" class="modal__close-btn modal__close-btn--menu modal-close">
+                        <svg class="icon">
+                            <use xlink:href="./images/sprite.svg#close"></use>
+                        </svg>
+                    </button>
+                    <h6 class="modal__title">
+                        Фильтры
+                    </h6>
                 </div>
             </div>
         </div>
     </body>
-</html></body></html></body></html>
+</html>

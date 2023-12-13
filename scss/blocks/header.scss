@@ -14,6 +14,9 @@
     color: var(--color-grey, #fff);
     background-color: rgba($color: var(--color-header, rgb(0, 43, 69)), $alpha: 0.9);
 
+    will-change: transform;
+    transition: transform 0.3s ease-out;
+
     @include breakpointMF(laptop) {
         padding: 2.4rem 0;
     }
@@ -35,8 +38,26 @@
         column-gap: 3.5rem;
     }
 
+    &__yamaps-link {
+        &.yamaps-link {
+            display: none;
+
+            @include breakpointMF(mobile) {
+                display: flex;
+            }
+        }
+    }
+
     &__address {
         margin-right: 7.6rem;
+
+        &.address {
+            display: none;
+
+            @include breakpointMF(desktop) {
+                display: flex;
+            }
+        }
     }
 
     &__contacts-box {
@@ -48,5 +69,9 @@
         display: flex;
         align-items: center;
         column-gap: 2rem;
+    }
+
+    &--hidden {
+        transform: translateY(-100%);
     }
 }

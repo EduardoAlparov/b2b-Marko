@@ -1,3 +1,5 @@
+@import '../helpers/mixins.scss';
+
 .button-headered {
     display: flex;
     flex-direction: column;
@@ -10,7 +12,7 @@
         position: relative;
 
         display: block;
-        margin-bottom: 1.4rem;
+        margin-bottom: 2.8rem;
 
         font: var(--font-main-14);
         white-space: nowrap;
@@ -27,6 +29,10 @@
             background-repeat: no-repeat;
             background-position: center;
             content: "";
+        }
+
+        @include breakpointMF(desktop) {
+            margin-bottom: 1.4rem;
         }
     }
 

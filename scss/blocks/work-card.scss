@@ -1,39 +1,331 @@
+@import '../helpers/mixins.scss';
+
 .work-card {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: unset;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+
+        width: 75%;
+        height: 100%;
+        border: 1px solid #000;
+        background: var(--color-light, #fbf6ef);
+
+        content: none;
+
+        @include breakpointMF(laptop) {
+            content: "";
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+
+
+        @include breakpointMF(laptop) {
+            flex-flow: row nowrap;
+            column-gap: 2.4rem;
+        }
+
+        @include breakpointMF(large-desktop) {
+            column-gap: 4.4rem;
+        }
+    }
+
+    &__info {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+        padding: 2rem 1rem;
+
+        &::before {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+
+            width: 100%;
+            height: 120%;
+
+            border: 1px solid #000;
+            background: var(--color-light, #fbf6ef);
+
+            content: "";
+
+            @include breakpointMF(laptop) {
+                content: none;
+            }
+        }
+
+        @include breakpointMF(small-tablet) {
+            padding: 4rem;
+        }
+
+        @include breakpointMF(laptop) {
+            display: block;
+            width: unset;
+            padding: 4rem 4rem 3.4rem 0;
+        }
+
+        @include breakpointMF(large-desktop) {
+            width: unset;
+            padding: 6rem 6rem 5.4rem 0;
+        }
+    }
+
     &__heading {
-        margin-bottom: 4.8rem;
+        margin-bottom: 3.2rem;
+
+        @include breakpointMF(large-desktop) {
+            margin-bottom: 4.4rem;
+        }
     }
 
     &__name {
         display: block;
         margin-bottom: 2rem;
-        font: var(--font-sec-24);
+        font: var(--font-sec-36);
         font-weight: 700;
+        text-align: center;
+
+        @include breakpointMF(laptop) {
+            font: var(--font-sec-24);
+            text-align: left;
+        }
+    }
+
+    &__desc {
+        text-align: center;
+
+        @include breakpointMF(laptop) {
+            text-align: left;
+        }
     }
 
     &__list {
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        margin-bottom: 3.1rem;
+        margin-left: 0.5rem;
+        column-gap: 4rem;
+
+        @include breakpointMF(laptop) {
+            column-gap: unset;
+        }
     }
 
     &__item {
+        position: relative;
         display: flex;
         flex-direction: column;
         flex-shrink: 0;
+        width: max-content;
+
+        &::before {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -2rem;
+            width: 0.1rem;
+            min-width: 1px;
+            height: 100%;
+
+            background: #d9d9d9;
+            content: "";
+        }
+
+        &:first-child {
+            &::before {
+                content: none;
+            }
+        }
+
+        @include breakpointMF(laptop) {
+            &::before {
+                left: -4rem;
+            }
+        }
+    }
+
+    &__value {
+        margin-top: 0.5rem;
     }
 
     &__size {
         display: block;
-        margin-bottom: 1.6rem;
+        margin-bottom: 1.3rem;
         color: var(--color-grey-2, #7c7c7c);
+        text-align: center;
+
+        @include breakpointMF(laptop) {
+            margin-bottom: 1.6rem;
+            margin-left: 0.5rem;
+            text-align: left;
+        }
     }
 
     &__buttons {
         display: flex;
-        align-items: center;
-        column-gap: 1.6rem;
+        flex-flow: column nowrap;
+        align-items: stretch;
+        column-gap: 0.8rem;
+
+        width: 100%;
+        margin-top: 3.2rem;
 
         > a {
+            width: 100%;
             flex-shrink: 0;
+
+            &:last-child {
+                margin-top: 1rem;
+            }
+
+            @include breakpointMF(supersmall-mobile) {
+                width: unset;
+                &:last-child {
+                    margin-top: unset;
+                }
+            }
         }
+
+        @include breakpointMF(supersmall-mobile) {
+            flex-flow: row nowrap;
+            width: unset;
+        }
+
+        @include breakpointMF(laptop) {
+            margin-top: 4.6rem;
+            margin-right: -0.5rem;
+            column-gap: 1.6rem;
+        }
+    }
+
+    // swiper block:
+    &__slider {
+        position: relative;
+        overflow: hidden;
+        width: 80%;
+        aspect-ratio: 1 / 1.28;
+        background-color: lightgray;
+
+        @include breakpointMF(small-tablet) {
+            width: 50%;
+        }
+
+        @include breakpointMF(laptop) {
+            width: 34.4%;
+        }
+
+        @include breakpointMF(large-desktop) {
+            width: 36.4%;
+        }
+    }
+
+    &__thumbs-wrapper {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+
+        display: flex;
+        align-items: center;
+        column-gap: 1.4rem;
+
+        padding: 1.2rem 1.6rem 1.2rem 1.3rem;
+
+        background-color: var(--color-extra, #001623);
+    }
+
+    &__slider-control {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__slider-pagination {
+        display: inline-flex;
+        align-items: baseline;
+        column-gap: 0.4rem;
+    }
+
+    &__pagination-count {
+        color: var(--color-grey, #fff);
+        font: var(--font-sec-24);
+        font-size: 2.06rem;
+    }
+
+    &__pagination-total {
+        color: var(--color-grey-3, #797979);
+        font: var(--font-sec-24);
+        font-size: 1.05rem;
+    }
+
+    &__slider-navigation {
+        display: flex;
+        align-items: center;
+        column-gap: 0.6rem;
+    }
+
+    &__icon {
+        width: 2rem;
+        height: 0.7rem;
+        fill: var(--color-grey, #fff)
+    }
+
+    &__navigation-next {
+        .work-card__icon {
+            transform: rotate(180deg);
+        }
+    }
+
+    // main swiper:
+    &__main-swiper {
+        height: 100%;
+    }
+
+    &__main-swiper-link {
+        position: relative;
+        height: 100%;
+
+        img {
+            @include centeredAbsolute();
+            display: block;
+            width: 100%;
+            min-height: 100%;
+        }
+    }
+
+    // thumbs swiper:
+
+    &__thumb {
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        img {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    &__thumbs-swiper-slide {
+        aspect-ratio: 1.05 / 1;
     }
 }

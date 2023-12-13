@@ -10,6 +10,7 @@
   left: 50%;
   width: 100%;
   height: 100%;
+  display: none;
   transform: translate(-50%, -50%);
 }
 
@@ -24,13 +25,28 @@
 
 .advantages__decore .advantages__picture {
   flex: 1 1 auto;
-  margin-right: -41.3rem;
+  margin-right: -31.3rem;
   margin-left: -100%;
   padding-left: 100%;
+  transition-property: transform, opacity;
+  transition-duration: 0.7s;
+  transition-timing-function: ease;
+}
+
+@media only screen and (min-width: 1201px) {
+  .advantages__decore .advantages__picture {
+    margin-right: -41.3rem;
+  }
 }
 
 .advantages__decore .advantages__list-wrapper {
   flex: 1 0 calc(100% - 35rem);
+}
+
+@media only screen and (min-width: 1025px) {
+  .advantages__decore {
+    display: block;
+  }
 }
 
 .advantages__main {
@@ -48,13 +64,32 @@
 
 .advantages__picture {
   position: relative;
-  flex: 0 0 36.3rem;
+  flex: 0 0 35.3rem;
+  display: none;
+}
+
+@media only screen and (min-width: 1025px) {
+  .advantages__picture {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1201px) {
+  .advantages__picture {
+    flex: 0 0 41.3rem;
+  }
+}
+
+@media only screen and (min-width: 1401px) {
+  .advantages__picture {
+    flex: 0 0 36.3rem;
+  }
 }
 
 .advantages__picture img {
   position: absolute;
   right: 0;
-  top: 55%;
+  top: 56%;
   transform: translateY(-50%);
   z-index: 1;
   height: 132%;
@@ -63,16 +98,55 @@
 
 .advantages__list-wrapper {
   flex: 0 1 auto;
-  padding-top: 9.8rem;
-  padding-bottom: 10.5rem;
+  padding-top: 4rem;
+  padding-bottom: 5.5rem;
+}
+
+@media only screen and (min-width: 1025px) {
+  .advantages__list-wrapper {
+    padding-top: 9.8rem;
+    padding-bottom: 10.5rem;
+  }
 }
 
 .advantages__list {
   display: flex;
-  /* justify-content: space-between; */
-  column-gap: 7rem;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+@media only screen and (min-width: 1025px) {
+  .advantages__list {
+    flex-flow: row nowrap;
+  }
 }
 
 .advantages__item {
-  flex: 1 1 33.33%;
+  width: 100%;
+}
+
+@media only screen and (min-width: 1401px) {
+  .advantages__item:nth-child(2) {
+    margin-left: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 641px) {
+  .advantages__item {
+    width: calc(50% - 1rem);
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .advantages__item {
+    flex: 0 1 35%;
+    width: unset;
+  }
+}
+
+@media only screen and (min-width: 1401px) {
+  .advantages__item {
+    flex: 0 1 30%;
+  }
 }

@@ -1,6 +1,7 @@
 .button {
   display: block;
-  padding: 1.7rem 3.1rem;
+  max-height: 5.8rem;
+  padding: 1.4rem 2.5rem;
   color: var(--color-dark, #002b45);
   font: var(--font-main-16);
   text-align: center;
@@ -8,6 +9,12 @@
   outline: none;
   transition: var(--transition);
   cursor: pointer;
+}
+
+@media only screen and (min-width: 1201px) {
+  .button {
+    padding: 1.7rem 3.1rem;
+  }
 }
 
 .button--grey {

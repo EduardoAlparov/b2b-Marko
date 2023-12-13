@@ -9,9 +9,11 @@
   padding: 1.6rem 0;
   color: var(--color-grey, #fff);
   background-color: rgba(var(--color-header, #002b45), 0.9);
+  will-change: transform;
+  transition: transform 0.3s ease-out;
 }
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1024px) {
   .header {
     padding: 2.4rem 0;
   }
@@ -36,8 +38,28 @@
   column-gap: 3.5rem;
 }
 
+.header__yamaps-link.yamaps-link {
+  display: none;
+}
+
+@media only screen and (min-width: 577px) {
+  .header__yamaps-link.yamaps-link {
+    display: flex;
+  }
+}
+
 .header__address {
   margin-right: 7.6rem;
+}
+
+.header__address.address {
+  display: none;
+}
+
+@media only screen and (min-width: 1201px) {
+  .header__address.address {
+    display: flex;
+  }
 }
 
 .header__contacts-box {
@@ -49,4 +71,8 @@
   display: flex;
   align-items: center;
   column-gap: 2rem;
+}
+
+.header--hidden {
+  transform: translateY(-100%);
 }

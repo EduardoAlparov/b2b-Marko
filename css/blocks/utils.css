@@ -12,6 +12,15 @@
   clip-path: inset(100%);
 }
 
+.disable-scroll {
+  overflow: hidden;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
 ._bold-text {
   font-weight: 700;
 }
@@ -42,7 +51,7 @@
   }
 }
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1024px) {
   .show-on-tablet {
     display: none !important;
   }

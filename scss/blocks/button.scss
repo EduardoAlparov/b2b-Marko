@@ -2,7 +2,8 @@
 
 .button {
     display: block;
-    padding: 1.7rem 3.1rem;
+    max-height: 5.8rem;
+    padding: 1.4rem 2.5rem;
 
     color: var(--color-dark, #002b45);
     font: var(--font-main-16);
@@ -12,6 +13,10 @@
     outline: none;
     transition: var(--transition);
     cursor: pointer;
+
+    @include breakpointMF(desktop) {
+        padding: 1.7rem 3.1rem;
+    }
 
     &--grey {
         background-color: var(--color-back, #e1e1e1);

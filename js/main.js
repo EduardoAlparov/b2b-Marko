@@ -1,10 +1,14 @@
 import Modal from "./modules/Modal.js";
-// import validationForm from './modules/validation.js';
-// import inputMasks from './modules/masks.js';
-// import lazyload from './modules/lazyload.js';
+import lazyload from './modules/lazyload.js';
 
 import setHeaderPadding from './modules/setHeaderPadding.js';
+import headerHide from './modules/headerHide.js';
+import mobileMenuOpen from './modules/mobileMenuOpen.js';
+
+import workSlider from './modules/workSlider.js';
 import dropdownsControl from './modules/dropdownsControl.js';
+import fancyboxWorks from './modules/fancyboxWorks.js';
+import scrollAnimation from './modules/scrollAnimation.js';
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -15,22 +19,27 @@ document.addEventListener("DOMContentLoaded", () => {
         body.classList.remove('preload');
     }, 500);
 
+    setTimeout(() => {
+        body.classList.remove('animate-trigger');
+    }, 1500);
+
     // inits modals:
     const modal = new Modal({
         isOpen: (modal) => {
-            console.log('open modal');
         },
         isClose: (modal) => {
-            console.log('close modal');
         },
     });
 
-    // validationForm();
-    // inputMasks();
 
-    // lazyload for images, videos, iframes and objects:
-    // lazyload();
+    lazyload();
 
     setHeaderPadding();
+    headerHide();
+    mobileMenuOpen();
+
+    workSlider();
     dropdownsControl();
+    fancyboxWorks();
+    scrollAnimation();
 })

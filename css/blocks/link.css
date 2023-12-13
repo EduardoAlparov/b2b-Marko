@@ -1,10 +1,31 @@
 .link {
+  position: relative;
   display: block;
   font: var(--font-main-20);
   font-weight: 700;
-  transition: var(--transition);
+  transition: color 0.3s ease-out;
+}
+
+.link::before {
+  position: absolute;
+  top: calc(100%);
+  left: 50%;
+  z-index: 1;
+  height: 1px;
+  width: 0;
+  background-color: transparent;
+  border-style: dashed;
+  border-color: var(--color-orange, #f2a22e);
+  border-width: 0 0 1px 0;
+  transform: translateX(-50%);
+  transition: width 0.3s ease-out;
+  content: "";
 }
 
 .link:hover {
   color: var(--color-orange, #f2a22e);
+}
+
+.link:hover::before {
+  width: 100%;
 }

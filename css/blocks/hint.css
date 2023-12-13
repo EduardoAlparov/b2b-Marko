@@ -1,7 +1,7 @@
 .hint {
   position: relative;
   width: max-content;
-  padding: 1.8rem 3.4rem 1.8rem 3.2rem;
+  padding: 1.4rem 3rem 1.4rem 2.4rem;
   background-color: rgba(var(--color-header, #002b45), 0.9);
   border-radius: 1.4rem;
   backdrop-filter: blur(2px);
@@ -25,4 +25,10 @@
   background-repeat: no-repeat;
   background-position: center;
   content: "";
+}
+
+@media only screen and (min-width: 1201px) {
+  .hint {
+    padding: 1.8rem 3.4rem 1.8rem 3.2rem;
+  }
 }

@@ -20,8 +20,8 @@
 
         &::after {
             position: absolute;
-            top: 0;
-            left: 100%;
+            top: 1px;
+            left: calc(100% - 2px);
             font-size: 1rem;
             content: attr(data-counter);
         }

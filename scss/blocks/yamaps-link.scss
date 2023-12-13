@@ -1,24 +1,44 @@
+@import '../helpers/mixins.scss';
+
 .yamaps-link {
     display: flex;
     align-items: center;
-    column-gap: 0.5rem;
+    column-gap: 0.3rem;
     flex-shrink: 0;
 
     span {
         flex-shrink: 0;
         display: block;
-        width: 5.7rem;
+        width: 3.8rem;
         aspect-ratio: 1;
 
         background-image: url('../../images/ya-pin.png');
         background-repeat: no-repeat;
         background-size: 100%;
         background-position: center;
+
+        will-change: transform;
+        transition: var(--transition);
+
+        @include breakpointMF(tablet) {
+            width: 5.7rem;
+        }
     }
 
     .icon {
         flex-shrink: 0;
-        width: 12rem;
-        height: 5.84rem;
+        width: 8rem;
+        height: 3.9rem;
+
+        @include breakpointMF(tablet) {
+            width: 12rem;
+            height: 5.84rem;
+        }
+    }
+
+    &:hover {
+        span {
+            transform: scale(1.04);
+        }
     }
 }

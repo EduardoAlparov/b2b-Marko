@@ -1,10 +1,12 @@
+@import '../helpers/mixins.scss';
+
 .advantages {
     position: relative;
     z-index: 20;
 
     background-color: var(--color-light, #fbf6ef);
-    $padding: 35rem;
-    $half: $padding / 2;
+
+
 
     &__decore {
         position: absolute;
@@ -12,6 +14,8 @@
         left: 50%;
         width: 100%;
         height: 100%;
+
+        display: none;
         transform: translate(-50%,-50%);
 
         .advantages__site-container {
@@ -25,13 +29,25 @@
 
         .advantages__picture {
             flex: 1 1 auto;
-            margin-right: -41.3rem;
+            margin-right: -31.3rem;
             margin-left: -100%;
             padding-left: 100%;
+
+            transition-property: transform, opacity;
+            transition-duration: 0.7s;
+            transition-timing-function: ease;
+
+            @include breakpointMF(desktop) {
+                margin-right: -41.3rem;
+            }
         }
 
         .advantages__list-wrapper {
             flex: 1 0 calc(100% - 35rem);
+        }
+
+        @include breakpointMF(laptop) {
+            display: block;
         }
     }
 
@@ -52,12 +68,25 @@
 
     &__picture {
         position: relative;
-        flex: 0 0 36.3rem;
+        flex: 0 0 35.3rem;
+        display: none;
+
+        @include breakpointMF(laptop) {
+            display: block;
+        }
+
+        @include breakpointMF(desktop) {
+            flex: 0 0 41.3rem;
+        }
+
+        @include breakpointMF(large-desktop) {
+            flex: 0 0 36.3rem;
+        }
 
         img {
             position: absolute;
             right: 0;
-            top: 55%;
+            top: 56%;
             transform: translateY(-50%);
             z-index: 1;
             height: 132%;
@@ -67,17 +96,46 @@
 
     &__list-wrapper {
         flex: 0 1 auto;
-        padding-top: 9.8rem;
-        padding-bottom: 10.5rem;
+        padding-top: 4rem;
+        padding-bottom: 5.5rem;
+
+        @include breakpointMF(laptop) {
+            padding-top: 9.8rem;
+            padding-bottom: 10.5rem;
+        }
     }
 
     &__list {
         display: flex;
-        /* justify-content: space-between; */
-        column-gap: 7rem;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        gap: 2rem;
+
+        @include breakpointMF(laptop) {
+            flex-flow: row nowrap;
+        }
     }
 
     &__item {
-        flex: 1 1 33.33%;
+        width: 100%;
+
+        &:nth-child(2) {
+            @include breakpointMF(large-desktop) {
+                margin-left: 1.2rem;
+            }
+        }
+
+        @include breakpointMF(small-tablet) {
+            width: (calc(50% - 1rem));
+        }
+
+        @include breakpointMF(laptop) {
+            flex: 0 1 35%;
+            width: unset;
+        }
+
+        @include breakpointMF(large-desktop) {
+            flex: 0 1 30%;
+        }
     }
 }
