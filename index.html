@@ -99,7 +99,8 @@
                     <div class="hero__back">
                         <div class="hero__picture">
                             <picture>
-                                <source type="image/webp" srcset="./images/hero-back.webp" alt="hero image">
+                                <source media="(max-width: 992px)" type="image/webp" srcset="./images/hero-back-m.webp" alt="hero image"/>
+                                <source media="(min-width: 992px)" type="image/webp" srcset="./images/hero-back.webp" alt="hero image"/>
                                 <img class="lazy" src="./images/hero-back.jpg" alt="hero image">
                             </picture>
                             <div class="hero__hints">
