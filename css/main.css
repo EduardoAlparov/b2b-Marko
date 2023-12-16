@@ -709,7 +709,7 @@ textarea:required:valid {
   display: block;
   width: 3.8rem;
   aspect-ratio: 1;
-  background-image: url("../../images/ya-pin.png");
+  background-image: url("../images/ya-pin.png");
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
