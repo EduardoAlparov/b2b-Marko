@@ -1,0 +1,52 @@
+.yamaps-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 0.3rem;
+          column-gap: 0.3rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.yamaps-link span {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: block;
+  width: 3.8rem;
+  aspect-ratio: 1;
+  background-image: url("../images/ya-pin.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  will-change: transform;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+@media only screen and (min-width: 769px) {
+  .yamaps-link span {
+    width: 5.7rem;
+  }
+}
+
+.yamaps-link .icon {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 8rem;
+  height: 3.9rem;
+}
+
+@media only screen and (min-width: 769px) {
+  .yamaps-link .icon {
+    width: 12rem;
+    height: 5.84rem;
+  }
+}
+
+.yamaps-link:hover span {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+}
