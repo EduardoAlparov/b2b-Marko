@@ -1,9 +1,0 @@
-.address {
-  display: flex;
-  flex-direction: column;
-  font: var(--font-main-14);
-}
-
-.address > strong {
-  margin-bottom: 0.7rem;
-}
