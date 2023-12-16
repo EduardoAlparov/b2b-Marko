@@ -72,6 +72,8 @@
     }
 
     &--hidden {
-        transform: translateY(-100%);
+        @include breakpointMF(desktop) {
+            transform: translateY(-100%);
+        }
     }
 }

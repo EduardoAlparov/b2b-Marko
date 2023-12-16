@@ -449,9 +449,11 @@ textarea:required:valid {
           column-gap: 2rem;
 }
 
-.header--hidden {
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
+@media only screen and (min-width: 1201px) {
+  .header--hidden {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
 }
 
 /* BEMs*/
