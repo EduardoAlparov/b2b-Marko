@@ -5,35 +5,8 @@
 /* FONTS LOAD SECTION: */
 /* @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@400;700&display=swap'); */
 
-/* LAYOUTS STYLES: */
-@import url("./css/blocks/global.css");
-@import url("./css/blocks/modal.css");
-@import url("./css/blocks/layout.css");
-@import url("./css/blocks/header.css");
-
-/* BEM BLOCKS(compiled from /scss by https://github.com/ritwickdey/vscode-live-sass-compiler):*/
-@import url("./css/blocks/utils.css");
-@import url("./css/blocks/logo.css");
-@import url("./css/blocks/address.css");
-@import url("./css/blocks/socials.css");
-@import url("./css/blocks/button.css");
-@import url("./css/blocks/link.css");
-@import url("./css/blocks/yamaps-link.css");
-@import url("./css/blocks/btn-menu.css");
-/* hero */
-@import url("./css/blocks/hero.css");
-@import url("./css/blocks/advantage.css");
-@import url("./css/blocks/button-headered.css");
-@import url("./css/blocks/hint.css");
-/* advantages */
-@import url("./css/blocks/advantages.css");
-/* works */
-@import url("./css/blocks/works.css");
-@import url("./css/blocks/dropdown.css");
-@import url("./css/blocks/checkbox.css");
-@import url("./css/blocks/work-card.css");
-
-/* VENDORS: */
+/* COMPRESSED CSS FROM COMPILED SCSS(compiled from /scss by https://github.com/ritwickdey/vscode-live-sass-compiler): */
+@import url("./css/main.min.css");
 
 /* USER VARIABLES SECTION: */
 :root {
